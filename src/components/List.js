@@ -7,17 +7,22 @@ export default function List(props){
         return <Card key = {i} title={item.title} content={item.content} />
     }
         )
-    return <section className="List">
-      
-    <header className="List-header">
-      <h2>{props.header}</h2>
-    </header>
-    <div className="List-cards">
-    {cards}
-    <button type="button" className="List-add-button">
-              + Add Random Card
-            </button>
+    return (
+      <section className="List">
+        <header className="List-header">
+          <h2>{props.header}</h2>
+        </header>
+        <div className="List-cards">
+          {cards}
+          <button
+            type="button"
+            className="List-add-button"
+            onClick={() => props.handleRandomCard(props.id)}
+          >
+            + Add Random Card
+          </button>
         </div>
-        </section>
+      </section>
+    );
 }
 
